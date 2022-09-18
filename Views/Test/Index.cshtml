@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<html>
+<head>
+
+</head>
+<body>
+    <div>
+        @*@{
+            string message = "hello world";
+        }
+        <p>Thong tin cua message: @message</p>
+
+        @{
+            string greeting = "welcome to our site";
+            var toDay = DateTime.Now.DayOfWeek;
+            string greetingMessage = greeting + " Today is " + toDay;
+        }
+        <p>thong tin cua greetingMessage la: @greetingMessage</p>
+        @{            string[] monHoc = { "lap trinh web", "lap trinh.net", "lap trinh java" };
+        }
+        <ul>
+            @{
+                foreach(var i in monHoc)
+            {
+                <li>@i </li>
+            }
+            }
+        </ul>*@
+        @using (Html.BeginForm())
+        {
+         <div>
+            <lable>Tai khoan: </lable>
+            @Html.TextBox("Tai khoan")
+         </div>
+         <div>
+             <lable>Password: </lable>
+             @Html.Password("password")
+         </div>
+        }
+    </div> 
+</body>
+</html>
